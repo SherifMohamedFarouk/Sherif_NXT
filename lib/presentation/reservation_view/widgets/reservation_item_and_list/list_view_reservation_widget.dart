@@ -33,6 +33,7 @@ class ListViewReservationWidget extends StatelessWidget {
         final Reservations reservationItem = getRegister.reservationsList![i];
         // expandable to get the feel of expanded and closed widget in the design
         return  Expandable(
+          key: Key("reservation$i"),
             arrowLocation:ArrowLocation.left ,
             backgroundColor:Theme.of(context).colorScheme.onPrimary,
             arrowWidget:  Icon(Icons.keyboard_arrow_up,color: Theme.of(context).colorScheme.primaryContainer,),
