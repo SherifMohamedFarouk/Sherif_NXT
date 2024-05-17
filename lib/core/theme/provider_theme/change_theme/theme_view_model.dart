@@ -4,7 +4,9 @@ import 'package:sherif_nxt_assessment/core/utilities/constants.dart';
 
 
 class ThemeViewModel extends ChangeNotifier{
+
  bool? isDark; // true => dark , false => light
+
  void changeTheme(value){
    isDark = value;
    SharedPref.saveData(key: Constants.isDark, value: isDark);

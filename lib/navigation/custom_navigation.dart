@@ -29,9 +29,9 @@ abstract class CustomNavigator {
 
   static Future push(String routeName,
       {arguments,
-        bool replace = false,
-        bool removeUntil = false,
-        bool isFirst = false}) {
+      bool replace = false,
+      bool removeUntil = false,
+      bool isFirst = false}) {
     if (removeUntil) {
       return navigatorState.currentState!.pushNamedAndRemoveUntil(routeName,
           isFirst ? (Route<dynamic> route) => route.isFirst : (_) => false,
