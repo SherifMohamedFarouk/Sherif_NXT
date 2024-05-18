@@ -37,6 +37,7 @@ dev_dependencies:
     sdk: flutter
   test: ^1.5.1
   flutter_lints: ^2.0.0
+  platform: ^3.1.0
 
 
 

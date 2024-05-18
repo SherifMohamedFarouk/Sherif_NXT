@@ -1,3 +1,4 @@
+
 import 'package:flutter_driver/flutter_driver.dart';
 import 'package:test/test.dart';
 
@@ -24,6 +25,7 @@ Future<void> main() async {
 
     test('open', () async {
       // Ensure the switch is present
+
       await driver.waitFor(changeThemeSwitch);
       // Tap the switch to toggle it
       await Future.delayed(const Duration(seconds: 1,));
@@ -37,11 +39,15 @@ Future<void> main() async {
       await Future.delayed(const Duration(seconds: 1,));
       await driver.waitFor(hotelTextFinder);
       await Future.delayed(const Duration(milliseconds: 500));
+      // try to check if the list reservation is not empty
       try{
         await driver.waitFor(expandFinder, timeout: const Duration(seconds: 2));
         await Future.delayed(const Duration(milliseconds: 500));
         await driver.tap(expandFinder);
         await Future.delayed(const Duration(milliseconds: 500));
+        await driver.scroll(hotelTextFinder, 0, -1000, const Duration(seconds: 1));
+        await Future.delayed(const Duration(seconds: 1,));
+        await driver.scrollIntoView(hotelTextFinder);
         await driver.scroll(hotelTextFinder, 0, 1000, const Duration(seconds: 1));
         await Future.delayed(const Duration(seconds: 1,));
         await driver.waitFor(bottomAndroidSheet);
