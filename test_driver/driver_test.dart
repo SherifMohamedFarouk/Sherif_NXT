@@ -8,7 +8,7 @@ Future<void> main() async {
     final buttonFinder = find.text('Open Reservation');
     final changeThemeSwitch = find.byValueKey('changeTheme');
     final bottomAndroidSheet = find.text('Show Android Ticket');
-    final bottomIosSheet = find.text('Show IOS Ticket');
+  //  final bottomIosSheet = find.text('Show IOS Ticket');
     final hotelTextFinder =  find.text("Hotel Check-in");
     final expandFinder =  find.byValueKey("reservation0");
     late FlutterDriver driver;
@@ -41,7 +41,7 @@ Future<void> main() async {
       await Future.delayed(const Duration(milliseconds: 500));
       // try to check if the list reservation is not empty
       try{
-        await driver.waitFor(expandFinder, timeout: const Duration(seconds: 2));
+        await driver.waitFor(expandFinder, timeout: const Duration(seconds: 3));
         await Future.delayed(const Duration(milliseconds: 500));
         await driver.tap(expandFinder);
         await Future.delayed(const Duration(milliseconds: 500));

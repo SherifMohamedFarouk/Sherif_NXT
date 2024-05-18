@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sherif_nxt_assessment/core/global_widgets/clip_oval_image.dart';
 import 'package:sherif_nxt_assessment/model/reservations_model/user_tickets.dart';
 import 'package:ticket_widget/ticket_widget.dart';
 import '../../../../model/reservations_model/reservations.dart';
@@ -34,16 +35,8 @@ class TicketView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
-                    width: 120.sp,
-                    height: 120.sp,
-                    child: ClipOval(
-                      child: CachedNetworkImage(
-                        imageUrl: tickets.ticketUserData!.avatar!??"https://res.cloudinary.com/swtchcc/image/upload/c_scale,w_2800/ar_3:4,c_thumb,g_face,h_1512,z_0.80/v1682589758/userDocs/hvzsye0h3w8f6ud1cuwj.jpg",
-                        placeholder: (context, url) => Image.asset('assets/images/place-holder.jpg'),
-                      ),
-                    ),
-                  ),
+                  //Clip oval widget to give Image the circular design we need
+                  ClipOvalImage(url:tickets.ticketUserData!.avatar! ,width:120.sp,height:120.sp),
                   SizedBox(
                     width: 20.sp,
                   ),
